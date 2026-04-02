@@ -1,11 +1,13 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Management</title>
 
+    <!-- Laravel Vite (Correct & Shareable) -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 </head>
 
 <body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
@@ -25,17 +27,14 @@
             <a href="/events" class="text-gray-600 hover:text-indigo-600">Events</a>
 
             @auth
-                <!-- User Info -->
                 <span class="text-gray-500 text-sm">
                     Hi, {{ Auth::user()->name }}
                 </span>
 
-                <!-- Dashboard -->
                 <a href="/dashboard" class="text-gray-600 hover:text-indigo-600">
                     Dashboard
                 </a>
 
-                <!-- Logout -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button type="submit"
@@ -44,13 +43,11 @@
                     </button>
                 </form>
             @else
-                <!-- Login -->
                 <a href="{{ route('login') }}"
                    class="text-gray-600 hover:text-indigo-600 font-medium">
                     Login
                 </a>
 
-                <!-- Register -->
                 <a href="{{ route('register') }}"
                    class="bg-indigo-600 text-white px-4 py-1.5 rounded-md hover:bg-indigo-700 text-sm">
                     Register
